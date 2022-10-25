@@ -12,7 +12,7 @@ fi = np.array([2,4,-2])  # entradas de y en esos puntos
 
 xDatoDeseado = -1;
 x = sym.symbols("x");
-g = -(x**2)+5.5
+g = -(x**2)+5.5 
 
 # PROCEDIMIENTO
 
