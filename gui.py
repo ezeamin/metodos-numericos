@@ -37,6 +37,8 @@ def getPoints(e=None):
     try:
         numberOfPoints = int(numberOfPointsEntry.get())
         print("Cantidad de puntos:", numberOfPoints)
+        if(numberOfPoints > 30):
+            raise Exception
         errorLabel.destroy()
         mainFrame.destroy()
 
