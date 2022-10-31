@@ -6,8 +6,13 @@ import numpy as np
 import sympy as sym
 import matplotlib.pyplot as plt
 
+# g = funcion a aproximar
+# approxValue = valor a aproximar
+# xi = vector de puntos x
+# fi = vector de puntos f(x)
 
-def newton(g, approxValue, xi,fi):
+
+def newton(g, approxValue, xi, fi):
     x = sym.Symbol("x")
 
     # PROCEDIMIENTO
@@ -86,7 +91,11 @@ def newton(g, approxValue, xi,fi):
 
     # SALIDA
     np.set_printoptions(precision=2)  # elegimos como mostrar decimales
-    print('Tabla Diferencia Dividida')
+    print('--------------------------------------')
+    print('-------------- NEWTON ----------------')
+    print('--------------------------------------')
+    print("")
+    print('Tabla Diferencias Divididas')
     print('', titulo)  # espacio para que se alinee correctamente
     print(tabla)
     print('dDividida: ')
@@ -97,6 +106,7 @@ def newton(g, approxValue, xi,fi):
     print(polisimple)
 
     # MATPLOTLIB - GRAFICA
+    plt.figure(num='Newton')
     plt.plot(xi, fi, 'o', label='Puntos')
     plt.plot(pxi, pfi, label='Polinomio')
     plt.plot(pxi, pgi, "--", label="Funcion real")
@@ -106,4 +116,4 @@ def newton(g, approxValue, xi,fi):
     plt.xlabel('xi')
     plt.ylabel('fi')
     plt.title('Diferencias Divididas - Newton')
-    plt.show()
+    # plt.show()

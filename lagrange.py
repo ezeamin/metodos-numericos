@@ -2,9 +2,14 @@ import numpy as np
 import sympy as sym
 import matplotlib.pyplot as plt
 
-def lagrange(g,approxValue,xi,fxi):
+# g = funcion a aproximar
+# approxValue = valor a aproximar
+# xi = valores de x
+# fxi = valores de f(x)
+
+
+def lagrange(g, approxValue, xi, fxi):
     x = sym.Symbol('x')
-    # g = sym.ln(x)
 
     # ---------- PROCEDIMIENTO -----------
     n = len(xi)
@@ -48,6 +53,11 @@ def lagrange(g,approxValue,xi,fxi):
     error = abs(fxDatoDesReal - fxDatoDesAprox) * 100
 
     # imprimir datos
+    print("")
+    print('--------------------------------------')
+    print('-------------- LAGRANGE ----------------')
+    print('--------------------------------------')
+    print("")
     print("Valores de xi: ", xi)
     print("Valores de f(xi): ", fxi)
     print(" ")
@@ -71,5 +81,3 @@ def lagrange(g,approxValue,xi,fxi):
     plt.xlabel('xi')
     plt.ylabel('fi')
     plt.title('Interpolacion de LaGrange')
-    plt.show()
-

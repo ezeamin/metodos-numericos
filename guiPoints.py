@@ -3,6 +3,9 @@ from rootCreation import root
 
 import sympy as sym
 import numpy as np
+import matplotlib.pyplot as plt
+
+import sys
 
 from newton import newton
 from lagrange import lagrange
@@ -34,9 +37,16 @@ def calculate(e=None):
         for point in values:
             fi = np.append(fi, point[1])
 
+        sys.stdout = open("resultados.txt", "w")
+
         newton(g, approxValue, xi, fi)
         lagrange(g, approxValue, xi, fi)
         taylor(g, approxValue)
+        
+        sys.stdout.close()
+
+        plt.show()
+
     except:
         errorLabel.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
 
