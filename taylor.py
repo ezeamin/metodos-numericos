@@ -5,7 +5,9 @@ from scipy.interpolate import approximate_taylor_polynomial
 
 # g = funcion a aproximar
 # approxValue = valor a aproximar
-def taylor(g, approxValue):
+# gradoTaylor = grado del polinomio de Taylor
+
+def taylor(g, approxValue, gradoTaylor):
     # value of x to approximate the function at
     max = approxValue+5
     min = approxValue-5
@@ -25,8 +27,20 @@ def taylor(g, approxValue):
     plt.plot(approxValue, gx(approxValue), 'o', label="Valor real")
 
     minDegree = 1
-    maxDegree = 15
-    stepDegree = 2
+    maxDegree = gradoTaylor
+    stepDegree = 1
+
+    if (gradoTaylor > 6):
+        stepDegree = 2
+
+    if (gradoTaylor > 30):
+        stepDegree = 3
+
+    if (gradoTaylor > 50):
+        stepDegree = 4
+
+    if (gradoTaylor > 60):
+        maxDegree = 60
 
     print("")
     print('--------------------------------------')
@@ -34,15 +48,12 @@ def taylor(g, approxValue):
     print('--------------------------------------')
     print("")
 
-    print("*****************")
-    print(f'* g(x) = {g} *')
-    print("*****************")
     print("")
     print("----------------------------------")
 
     for degree in np.arange(minDegree, maxDegree, step=stepDegree):
         # function, point, degree, scale (width of interval), order (order of the polynomial)
-        func_taylor = approximate_taylor_polynomial(gx, 0, degree, 1,
+        func_taylor = approximate_taylor_polynomial(gx, approxValue, degree, 1,
                                                     order=degree + 2)
 
         print("GRADO: ", degree)
@@ -51,8 +62,12 @@ def taylor(g, approxValue):
         print(func_taylor)
         print("")
         print(f'Valor x: {approxValue}')
-        print(f'Valor real g: {valorReal}')
-        print(f'Valor aproximado f: {func_taylor(approxValue):.5}')
+        if (isinstance(valorReal, float)):
+            print(f'Valor f(x) real: {valorReal:.5}')
+            print(f'Valor f(x) aprox: {func_taylor(approxValue):.5}')
+        else:
+            print(f'Valor f(x) real: {valorReal:}')
+            print(f'Valor f(x) aprox: {func_taylor(approxValue):}')
         print("")
         print(f'Error: {(abs(valorReal - func_taylor(approxValue))*100):.5}%')
         print("----------------------------------")
@@ -62,7 +77,11 @@ def taylor(g, approxValue):
 
     # Dibujando detalles
     plt.legend()
-    plt.tight_layout()
     plt.axis([min, max, -10, 10])
     plt.title('Series de Taylor')
     # plt.show()
+
+
+# x = sym.Symbol('x')
+# taylor(sym.log(x), 7, 15)
+# plt.show()

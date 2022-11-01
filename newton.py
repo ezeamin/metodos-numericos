@@ -87,7 +87,10 @@ def newton(g, approxValue, xi, fi):
     gx = sym.lambdify(x, g)
     pgi = gx(pxi)
 
-    # print(px(-1)) #EVALUACION DE UN PUNTO
+    real = gx(approxValue)
+    aprox = px(approxValue)
+
+    error = abs(real - aprox) * 100
 
     # SALIDA
     np.set_printoptions(precision=2)  # elegimos como mostrar decimales
@@ -104,6 +107,21 @@ def newton(g, approxValue, xi, fi):
     print(polinomio)
     print('polinomio simplificado: ')
     print(polisimple)
+    print("")
+    print("")
+    print(f'Valor X deseado: {approxValue:}')
+    if (isinstance(real, float)):
+        print(f'Valor f(x) real: {real:.4}')
+        print(f'Valor f(x) aprox: {aprox:.4}')
+    else:
+        print(f'Valor f(x) real: {real:}')
+        print(f'Valor f(x) aprox: {aprox:}')
+
+    print(" ")
+    if (isinstance(error, float)):
+        print(f'Error: {error:.4}%')
+    else:
+        print(f'Error: {error:}%')
 
     # MATPLOTLIB - GRAFICA
     plt.figure(num='Newton')
@@ -116,4 +134,13 @@ def newton(g, approxValue, xi, fi):
     plt.xlabel('xi')
     plt.ylabel('fi')
     plt.title('Diferencias Divididas - Newton')
-    # plt.show()
+
+
+# x = sym.Symbol('x')
+# newton(sym.sin(x), 5, [0, 1, 3], [0, 0.841, 0.141])
+# plt.show()
+
+# x = sym.Symbol('x')
+# newton(sym.sin(sym.ln(x)), 7, [1, 2, 3,4,5], [0,0.639,0.891,0.983,0.999])
+# plt.show()
+

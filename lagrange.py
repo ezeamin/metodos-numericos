@@ -55,7 +55,7 @@ def lagrange(g, approxValue, xi, fxi):
     # imprimir datos
     print("")
     print('--------------------------------------')
-    print('-------------- LAGRANGE ----------------')
+    print('-------------- LAGRANGE --------------')
     print('--------------------------------------')
     print("")
     print("Valores de xi: ", xi)
@@ -65,10 +65,19 @@ def lagrange(g, approxValue, xi, fxi):
     print(polisimple)
     print(" ")
     print(f'Valor X deseado: {approxValue:}')
-    print(f'Valor f(x) real: {fxDatoDesReal:.4}')
-    print(f'Valor f(x) aprox: {fxDatoDesAprox:.4}')
+    # format only when its a float
+    if (isinstance(fxDatoDesReal, float)):
+        print(f'Valor f(x) real: {fxDatoDesReal:.4}')
+        print(f'Valor f(x) aprox: {fxDatoDesAprox:.4}')
+    else:
+        print(f'Valor f(x) real: {fxDatoDesReal:}')
+        print(f'Valor f(x) aprox: {fxDatoDesAprox:}')
     print(" ")
-    print(f'Error: {error:.4}%')
+
+    if (isinstance(error, float)):
+        print(f'Error: {error:.4}%')
+    else:
+        print(f'Error: {error:}%')
 
     # imprimir gráfica
     plt.figure(num='LaGrange')
@@ -81,3 +90,12 @@ def lagrange(g, approxValue, xi, fxi):
     plt.xlabel('xi')
     plt.ylabel('fi')
     plt.title('Interpolacion de LaGrange')
+
+
+# x = sym.Symbol('x')
+# lagrange(sym.sin(x), 5, [0, 1, 3], [0, 0.841, 0.141])
+# plt.show()
+
+# x = sym.Symbol('x')
+# lagrange(sym.sin(sym.ln(x)), 7, [1, 2, 3,4,5], [0,0.639,0.891,0.983,0.999])
+# plt.show()
