@@ -4,30 +4,30 @@
 
 Tabla Diferencias Divididas
  ['i ', 'xi', 'fi', 'F[1]']
-[[0. 0. 0. 1.]
- [1. 1. 1. 0.]]
+[[0. 2. 4. 2.]
+ [1. 0. 0. 0.]]
 dDividida: 
-[1.]
+[2.]
 polinomio: 
-1.0*x
+2.0*x
 polinomio simplificado: 
-1.0*x
+2.0*x
 
 --------------------------------------
 -------------- LAGRANGE ----------------
 --------------------------------------
 
-Valores de xi:  [0. 1.]
-Valores de f(xi):  [0. 1.]
+Valores de xi:  [2. 0.]
+Valores de f(xi):  [4. 0.]
  
 Polinomio de LaGrange
-1.0*x
+2.0*x
  
 Valor X deseado: 3.0
 Valor f(x) real: 9.0
-Valor f(x) aprox: 3.0
+Valor f(x) aprox: 6.0
  
-Error: 600.0%
+Error: 300.0%
 
 --------------------------------------
 -------------- TAYLOR ----------------

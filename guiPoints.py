@@ -50,8 +50,6 @@ def calculate(e=None):
     except:
         errorLabel.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
 
-    print(values)
-
 
 def createPointsFrame(numberOfPoints):
     pointsFrame.grid(row=0, column=0, padx=15, pady=15)
