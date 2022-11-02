@@ -3,6 +3,7 @@ from rootCreation import root
 
 import sympy as sym
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 
 import sys
@@ -10,6 +11,8 @@ import sys
 from newton import newton
 from lagrange import lagrange
 from taylor import taylor
+
+matplotlib.use('TkAgg')
 
 points = []
 values = []

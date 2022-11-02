@@ -79,8 +79,7 @@ def taylor(g, approxValue, gradoTaylor):
     plt.legend()
     plt.axis([min, max, -10, 10])
     plt.title('Series de Taylor')
-    # plt.show()
-
+    plt.savefig("taylor.png")
 
 # x = sym.Symbol('x')
 # taylor(sym.log(x), 7, 15)
