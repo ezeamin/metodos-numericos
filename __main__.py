@@ -35,11 +35,11 @@ errorLabel = Label(mainFrame, text="Error! Revise los campos", bg="yellow", font
 def getPoints(e=None):
     try:
         numberOfPoints = int(numberOfPointsEntry.get())
-        if (numberOfPoints > 30):
+        if (numberOfPoints > 30 or numberOfPoints < 2):
             raise Exception
         errorLabel.destroy()
         mainFrame.destroy()
-
+        
         createPointsFrame(numberOfPoints)
     except:
         errorLabel.grid(row=4, column=0, columnspan=2, padx=5, pady=5)
