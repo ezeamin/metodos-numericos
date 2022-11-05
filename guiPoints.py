@@ -11,6 +11,7 @@ import sys
 from newton import newton
 from lagrange import lagrange
 from taylor import taylor
+
 from sympy import oo, nan, zoo
 
 matplotlib.use('TkAgg')
@@ -95,7 +96,7 @@ def calculate(e=None):
             
         errorLabel.grid_forget()
 
-        sys.stdout = open("resultados.txt", "w")
+        sys.stdout = open("results/resultados.txt", "w")
 
         print("*****************")
         print(f'* g(x) = {g} *')

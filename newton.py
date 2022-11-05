@@ -134,7 +134,7 @@ def newton(g, approxValue, xi, fi):
     plt.xlabel('xi')
     plt.ylabel('fi')
     plt.title('Diferencias Divididas - Newton')
-    plt.savefig("newton.png")
+    plt.savefig("results/newton.png")
 
 
 # x = sym.Symbol('x')

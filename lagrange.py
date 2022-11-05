@@ -90,7 +90,7 @@ def lagrange(g, approxValue, xi, fxi):
     plt.xlabel('xi')
     plt.ylabel('fi')
     plt.title('Interpolacion de LaGrange')
-    plt.savefig("lagrange.png")
+    plt.savefig("results/lagrange.png")
 
 
 # x = sym.Symbol('x')
