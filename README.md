@@ -10,21 +10,21 @@ Para ejecutar el programa, se debe ejecutar el archivo `main.py` con Python 3.6 
 
 Se deberá instalar las librerias mencionadas en el apartado más abajo, con el comando
 
-    ```bash
-    pip install (libreria)
-    ```
+```bash
+$ pip install (libreria)
+```
 
 Tambien, se puede instalar el programa, generando un ejecutable, de la siguiente manera:
 
-    ```bash
-    $ pip install pyinstaller
-    ```
+```bash
+$ pip install pyinstaller
+```
 
 Aqui se deberá reiniciar la consola, y ejecutar el siguiente comando:
 
-    ```bash
-    $ pyinstaller main.py
-    ```
+```bash
+$ pyinstaller --onefile --windowed main.py
+```
 
 Se generará una carpeta `dist`, en la cual se encontrará el ejecutable.
 
