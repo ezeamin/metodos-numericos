@@ -96,7 +96,7 @@ def calculate(e=None):
             
         errorLabel.grid_forget()
 
-        sys.stdout = open("results/resultados.txt", "w")
+        sys.stdout = open("resultados.txt", "w")
 
         print("*****************")
         print(f'* g(x) = {g} *')

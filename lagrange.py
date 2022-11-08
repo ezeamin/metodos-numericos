@@ -90,13 +90,4 @@ def lagrange(g, approxValue, xi, fxi):
     plt.xlabel('xi')
     plt.ylabel('fi')
     plt.title('Interpolacion de LaGrange')
-    plt.savefig("results/lagrange.png")
-
-
-# x = sym.Symbol('x')
-# lagrange(sym.sin(x), 5, [0, 1, 3], [0, 0.841, 0.141])
-# plt.show()
-
-# x = sym.Symbol('x')
-# lagrange(sym.sin(sym.ln(x)), 7, [1, 2, 3,4,5], [0,0.639,0.891,0.983,0.999])
-# plt.show()
+    plt.savefig("lagrange.png")

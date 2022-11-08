@@ -1,7 +1,3 @@
-# Polinomio interpolación
-# Diferencias Divididas de Newton
-# Tarea: Verificar tamaño de vectores,
-#        verificar puntos equidistantes en x
 import numpy as np
 import sympy as sym
 import matplotlib.pyplot as plt
@@ -134,14 +130,4 @@ def newton(g, approxValue, xi, fi):
     plt.xlabel('xi')
     plt.ylabel('fi')
     plt.title('Diferencias Divididas - Newton')
-    plt.savefig("results/newton.png")
-
-
-# x = sym.Symbol('x')
-# newton(sym.sin(x), 5, [0, 1, 3], [0, 0.841, 0.141])
-# plt.show()
-
-# x = sym.Symbol('x')
-# newton(sym.sin(sym.ln(x)), 7, [1, 2, 3,4,5], [0,0.639,0.891,0.983,0.999])
-# plt.show()
-
+    plt.savefig("newton.png")

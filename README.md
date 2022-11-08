@@ -6,7 +6,7 @@ Se analizan las interpolaciones de Lagrange y Newton, añadiendo una comparacion
 
 ## Ejecucion
 
-Para ejecutar el programa, se debe ejecutar el archivo `main.py` con Python 3.6 o superior.
+Para ejecutar el programa, se debe ejecutar el archivo `__main__.py` con Python 3.6 o superior.
 
 Se deberá instalar las librerias mencionadas en el apartado más abajo, con el comando
 
@@ -23,7 +23,7 @@ $ pip install pyinstaller
 Aqui se deberá reiniciar la consola, y ejecutar el siguiente comando:
 
 ```bash
-$ pyinstaller --onefile --windowed main.py
+$ pyinstaller --onefile --windowed __main__.py
 ```
 
 Se generará una carpeta `dist`, en la cual se encontrará el ejecutable.
