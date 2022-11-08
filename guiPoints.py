@@ -93,7 +93,7 @@ def calculate(e=None):
                 fi = np.append(fi, g.subs(sym.Symbol('x'), point[0]))
             else:
                 fi = np.append(fi, point[1])
-            
+
         errorLabel.grid_forget()
 
         sys.stdout = open("resultados.txt", "w")
