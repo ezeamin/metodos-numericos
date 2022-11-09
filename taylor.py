@@ -30,16 +30,7 @@ def taylor(g, approxValue, gradoTaylor):
     minDegree = 1
     maxDegree = gradoTaylor
     stepDegree = 1
-
-    if (gradoTaylor > 6):
-        stepDegree = 2
-
-    if (gradoTaylor > 30):
-        stepDegree = 3
-
-    if (gradoTaylor > 50):
-        stepDegree = 4
-
+    
     if (gradoTaylor > 60):
         maxDegree = 60
 
