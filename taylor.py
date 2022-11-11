@@ -30,7 +30,7 @@ def taylor(g, approxValue, gradoTaylor):
     minDegree = 1
     maxDegree = gradoTaylor
     stepDegree = 1
-    
+
     if (gradoTaylor > 60):
         maxDegree = 60
 
@@ -51,7 +51,7 @@ def taylor(g, approxValue, gradoTaylor):
         # y en el except se hará el calculo manualmente en casos mas extremos con el valor x=0.
 
         try:
-        # function, point, degree, scale (width of interval), order (order of the polynomial)
+            # function, point, degree, scale (width of interval), order (order of the polynomial)
             func_taylor = approximate_taylor_polynomial(gx, 0, degree, 1,
                                                         order=degree + 2)
 
@@ -59,7 +59,8 @@ def taylor(g, approxValue, gradoTaylor):
             if (np.isnan(func_taylor(approxValue))):
                 raise Exception
             else:
-                error = abs(valorReal - func_taylor(approxValue))*100
+                error = (abs(valorReal - func_taylor(approxValue)) /
+                         abs(valorReal))*100
 
                 print("GRADO: ", degree)
                 print("")
@@ -96,7 +97,8 @@ def taylor(g, approxValue, gradoTaylor):
             func_taylor = func_taylor.expand()
             func_taylorTest = sym.lambdify(x, func_taylor)
 
-            error = abs(valorReal - func_taylorTest(approxValue))*100
+            error = (abs(valorReal - func_taylorTest(approxValue)) /
+                     abs(valorReal))*100
 
             print("GRADO: ", degree)
             print("")

@@ -86,7 +86,7 @@ def newton(g, approxValue, xi, fi):
     real = gx(approxValue)
     aprox = px(approxValue)
 
-    error = abs(real - aprox) * 100
+    error = (abs(real - aprox)/abs(real)) * 100
 
     # SALIDA
     np.set_printoptions(precision=2)  # elegimos como mostrar decimales

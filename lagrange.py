@@ -50,7 +50,7 @@ def lagrange(g, approxValue, xi, fxi):
     fxDatoDesReal = gx(approxValue)
     fxDatoDesAprox = px(approxValue)
 
-    error = abs(fxDatoDesReal - fxDatoDesAprox) * 100
+    error = (abs(fxDatoDesReal - fxDatoDesAprox)/abs(fxDatoDesReal)) * 100
 
     # imprimir datos
     print("")
